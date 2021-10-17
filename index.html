@@ -28,11 +28,16 @@
             el: '#app',
             data:{
                 monscript: 'yo yo yo bitch :))))',
-                costOfBanana: 10,
+                costOfBanana: 30,
                 costOfApple: 4,
                 costOfOrange: 8,
             
-            }
+            },
+             computed: {
+                 totalAmount() {
+                     return this.costOfBanana + this.costOfApple + this.costOfOrange
+                 }
+             }
 
         })
     </script>
