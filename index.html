@@ -23,12 +23,20 @@
        <h2>totale panier : {{ costOfBanana + costOfApple + costOfOrange }}</h2>
         
     </div>
+    <div id="app2">
+        <ul>
+            <li v-for="item in apiResponse">
+                <a v-bind:href="item.url">{{ item.name }}</a>
+            </li>
+        </ul>
+    </div>
     <script>
+        
         const app = new Vue ({
             el: '#app',
             data:{
                 monscript: 'yo yo yo bitch :))))',
-                costOfBanana: 30,
+                costOfBanana: 400,
                 costOfApple: 4,
                 costOfOrange: 8,
             
@@ -41,6 +49,20 @@
 
         })
     </script>
+    <script>
+        const app2 = new Vue({
+            el: '#app2',
+            data: {
+                apiResponse: [
+                    { name: 'GitHub', url: 'https://www.github.com' },
+                    { name: 'Twitter', url: 'https://www.twitter.com' },
+                    { name: 'Netlify', url: 'https://www.netlify.com' }
+                ]
+            }
+        })
+    </script>
+
+    
     
 </body>
 </html>
